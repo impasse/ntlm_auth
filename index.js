@@ -1,8 +1,8 @@
-const ntlm = require('./src/ntlm');
+const Ntlm = require('./src/ntlm');
 const session_security = require('./src/session_security');
 
 
 module.exports = {
-    ntlm,
+    Ntlm,
     session_security,
 };

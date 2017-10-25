@@ -1,5 +1,5 @@
 const crypto = require('crypto');
-const DES = require('./des');
+const { DES } = require('./util');
 const {
     NegotiateFlags,
 } = require('./constants');

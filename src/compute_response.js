@@ -191,7 +191,7 @@ class ComputeResponse {
     }
 
     static _calc_resp(password_hash, server_challenge) {
-        const password_hash = Buffer.concat([
+        password_hash = Buffer.concat([
             password_hash,
             Buffer.alloc(21 - password_hash.length),
         ]);

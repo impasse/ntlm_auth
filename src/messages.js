@@ -13,7 +13,7 @@ function get_version(negotiateFlags) {
         const majorVersion = struct.pack('<B', 6);
         const minorVersion = struct.pack('<B', 1);
         const build = struct.pack('<H', 7601);
-        const versionReserved = '\0\0\0';
+        const versionReserved = Buffer.alloc(3);
         const nltmRevisionCurrent = struct.pack('<B', 15);
         return Buffer.concat([
             majorVersion,
@@ -78,7 +78,7 @@ class NegotiateMessage{
             msg,
             Buffer.from(this.domain_name, 'ascii'),
             Buffer.from(this.workstation, 'ascii'),
-        ]).toString('base64');
+        ]);
     }
 }
 

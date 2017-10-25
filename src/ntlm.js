@@ -32,7 +32,7 @@ class Ntlm {
 
     create_negotiate_message(domain_name, workstation) {
         this.negotiate_message = new NegotiateMessage(this.negotiate_flags, domain_name, workstation);
-        return this.negotiate_message.toString('base64');
+        return this.negotiate_message.get_data().toString('base64');
     }
 
     parse_challenge_message(msg2) {
@@ -75,3 +75,5 @@ class Ntlm {
         }
     }
 }
+
+module.exports = Ntlm;

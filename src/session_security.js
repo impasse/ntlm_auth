@@ -135,7 +135,7 @@ class SessionSecurity {
     _verify_signature(message, signature) {
         let actual_checksum, actual_seq_num;
         if (this.negotiate_flags & NegotiateFlags.NTLMSSP_NEGOTIATE_EXTENDED_SESSIONSECURITY) {
-            actual_checksum = signature.slice(4:12)
+            actual_checksum = signature.slice(4, 12)
             actual_seq_num = struct.unpack("<I", signature.slice(12, 16))[0];
         } else {
             actual_checksum = signature.slice(8, 12);
